@@ -112,6 +112,7 @@ const eurToUSD = 1.1;
 //   return mov * eurToUSD;
 // });
 
+//MAP
 const movementsUSD = movements.map((mov) => mov * eurToUSD);
 
 const movementsUSDfor = [];
@@ -130,6 +131,21 @@ const movementsDescriptions = movements.map(
 
 console.log(movementsDescriptions);
 
+//FILTER
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter((mov) => mov < 0);
+
+console.log(withdrawals);
 /////////////////////////////////////////////////
 /*
 let arr = ['a', 'b', 'c', 'd', 'e'];
